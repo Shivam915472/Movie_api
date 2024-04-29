@@ -1,0 +1,19 @@
+input{
+    display: flex;
+    margin-top: 100px; 
+    margin-left: 500px;
+    height: 30px;
+    width: 200px;
+    font-size: large;
+    
+} x
+button{
+    margin-left: 500px;
+    font-size: large;
+}
+#poster{
+    display: flex;
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+}

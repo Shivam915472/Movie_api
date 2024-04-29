@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="C:\Users\shivam\Desktop\practise.html\New folder\pratise.css\bootstrap (2).css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <input type="search" placeholder="Type Movie Name" id="search"> <br>
+    <button onclick="show()" class="btn btn-success" >Search movies</button>
+    <div id="poster">
+    </div>
+</body>
+<script>
+    function show() {
+        let name = document.getElementById("search").value
+        let url = `https://www.omdbapi.com/?s=${name}&apikey=5b2ec445`;
+        fetch(url).then((res) => {
+            return res.json();
+        }).then((res) => {
+            operation(res.Search);
+            // console.log(res.Search);
+        }).catch((err) => {
+            
+            console.log(err)
+        })
+    }
+    function operation(arr) {
+        arr.map((data) => {
+            console.log(data.Poster)
+            let B = document.createElement("div")
+
+            let image = document.createElement("img")
+            image.src = data.Poster
+
+            let title = document.createElement("name")
+            title = data.Title
+
+            let year = document.createElement("since")
+            year = data.Year
+
+            B.append(image, title, year)
+            document.getElementById("poster").append(B)
+
+        })
+            }
+</script>
+
+</html>
